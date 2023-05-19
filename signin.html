@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Signin
+    </title>
+  <!--meta tags -->
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgba(194, 138, 122, 0.98);
+    font-family: 'Raleway', sans-serif;
+    display: block;  
+}
+.background-wrapper{
+     
+    margin: 5vh auto;
+    background-color: #ffffff;
+    width: 145vh;
+    height: 90vh;
+    display: none;
+    flex-direction: row;   
+}
+.p-subtitle{
+    color: #060612;
+    padding: 0px 6px;
+}
+
+.user-profile{
+
+    width: 100%;
+    height: 22vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user-conversations{
+
+    width: 100%;
+    height: 100%;
+}
+
+.conversations-header{
+    width: 100%;
+    height: 6vh;
+    padding: 20px 30px;
+    margin-bottom: 7px;
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 14pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.conversation-notification-bckg{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    background-color: rgba(255, 255, 255, 0.856);
+    margin-left: 17vh;  
+    padding: 0px 24px;
+    height: 8vh;   
+}
+
+#new-message{
+
+    font-family: 'Raleway';
+    font-weight: 600;
+
+}
+
+
+#user-message-form{
+
+    width: 100%;
+    font-size: 13pt;
+    padding: 2px 10px;
+    outline-style: none;
+    border: none;
+    font-family: 'Raleway';
+    font-weight: 500;
+}
+
+#user-message::placeholder{
+
+    color:#080808;
+
+}
+
+#send-message{
+
+    color: #a4b0be;
+    cursor: pointer;
+}
+
+#send-message{
+    padding: 0px 15px;
+}
+
+
+
+.get-started{
+  display: flex;
+  flex-direction: column;
+  margin: 20vh auto;
+  width: 500px;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  
+}
+.get-started p{
+  font-size: 30pt;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  color: #080810;
+   margin-top: 20px;
+   margin-bottom: 30px;
+  
+}
+.login-p-subtitle{
+  color: #080810;
+}
+.login-form{
+  margin: 8px 0;
+  padding: 16px 12px;
+  width: 350px;
+  outline-style: none;
+  border: none;
+  font-family: 'Raleway';
+  font-size: 12pt;
+  font-weight: 500;
+  border: none;
+  border: solid 4px rgb(235, 235, 235);
+ 
+}
+
+.login-form:focus{
+  border: solid 4px black;
+  transition: .2s;
+}
+.button {
+		  background-color: #fbff04; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+		.button2 {background-color: #041115;} /* Blue */
+
+.login-btn:active{
+  outline-style: none;
+  border: none;
+}
+</style>
+<script>
+    var UserNameDisplay = document.getElementById('user-name')
+var UserConnectStat = document.getElementById('user-connection-icon')
+var UserProfileStatText = document.getElementById('user-profile-name')
+
+var chatWrapper = document.getElementById('chat-wrapper')
+var userTxt = document.getElementById('user-message-form')
+
+var messageWrapper = document.createElement('div')
+messageWrapper.className = 'message-wrapper'
+var messageBox = document.createElement('div')
+messageBox.className = 'message-box'
+var messageBoxStyle = document.createElement('div')
+messageBoxStyle.className = 'message-box-style'
+var messageBoxP = document.createElement('p')
+messageBoxP.className = 'message-box-p'
+var selectProfilePicWrapper = document.getElementById('select-profile-pic-menu')
+function sendMessage(){
+
+    if (userTxt.value == ''){
+
+    }else{    
+        let messageWrapperClone = messageWrapper.cloneNode(true)
+        let messageBoxClone = messageBox.cloneNode(true)
+        let messageBoxStyleClone = messageBoxStyle.cloneNode(true)
+        let messageBoxPClone = messageBoxP.cloneNode(true)
+
+        messageWrapperClone.appendChild(messageBoxClone)
+        messageBoxClone.appendChild(messageBoxPClone)
+        messageWrapperClone.appendChild(messageBoxStyleClone)
+        chatWrapper.appendChild(messageWrapperClone)
+        messageBoxPClone.innerHTML = userTxt.value
+        userTxt.value = ''
+        userTxt.focus()
+        messageWrapperClone.scrollIntoView();
+    }
+}
+
+</script>
+</head>
+
+<body>
+    <html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+ <div class="background-wrapper" id="main">
+   <main class="chat-main-wrapper"> 
+
+            <div class="chat-header"> 
+
+                <div class="chat-header-contact-master">
+                    <div class="chat-header-contact-profile-pic"></div>
+                   
+                    <div class="chat-header-contact-name">
+                        Signin
+
+                        <div class="chat-header-contact-connection-display">
+                            Online
+                        </div>
+                    </div>
+               
+                </div>
+                <div class="chat-header-contact-actions">
+
+                    <span class="material-icons" id="video-call">
+                        videocam
+                    </span>
+                    <span class="material-icons" id="chat-contact-messages-options">
+                        more_vert
+                    </span>
+
+                </div>
+          </div>
+      </main>
+    </div>   
+    <div class="get-started" id="login-screen">
+       <p>
+                    
+                   
+                    Sign <span class="login-p-subtitle">In</span>
+                 
+                </p>
+      
+        <form class="login-form" action="/signin" method="GET">
+        <input type="text" name="user" id="email" placeholder="Username" class="login-form">
+        <input type="password" name="password" id="password" class="login-form" placeholder="Password">
+        <div class="submit-container">
+            <button type="submit" class="button button2">SIGN IN</button>
+
+            <p style="font-size: smaller;">Register here! <a href="/logon">Sign Up</a></p>
+          </div>
+    
+        </form> 
+    </div>
+  <script src="../js/all.js">
+    </script>
+
+</body>
+</html>
+</body>
+
+</html>
